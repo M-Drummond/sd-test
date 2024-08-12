@@ -6,7 +6,7 @@ export default {
       xs: '319px',
       sm: '520px',
       md: '767px',
-      lg: '1200px'
+      lg: '1230px'
     },
     extend: {
       borderRadius: {

@@ -1,0 +1,25 @@
+@layer base {
+  .header-width {
+    width: 100%;
+    margin: 0 auto;
+    max-width: calc(100% - 18px);
+  }
+
+  @screen sm {
+    .header-width {
+      max-width: 450px;
+    }
+  }
+
+  @screen md {
+    .header-width {
+      max-width: 767px;
+    }
+  }
+
+  @screen lg {
+    .header-width {
+      max-width: 1230px;
+    }
+  }
+}

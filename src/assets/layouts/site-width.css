@@ -1,0 +1,27 @@
+@layer base {
+  .site-width {
+    width: 100%;
+    margin: 0 auto;
+    max-width: calc(100% - 18px);
+  }
+
+  @screen sm {
+    .site-width {
+      max-width: 380px;
+    }
+  }
+
+  @screen md {
+    .site-width {
+      max-width: 767px;
+    }
+  }
+
+  @screen lg {
+    .site-width {
+      padding-left: 0;
+      padding-right: 0;
+      max-width: 1230px;
+    }
+  }
+}

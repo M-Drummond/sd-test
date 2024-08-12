@@ -1,3 +1,6 @@
+@import '../assets/layouts/header-width.css';
+@import '../assets/layouts/site-width.css';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

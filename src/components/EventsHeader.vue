@@ -6,7 +6,7 @@ import IconSearch from '../components/icons/IconSearch.vue'
 
 <template>
   <header
-    class="flex text-sm flex-col md:flex-row md:items-center max-w-screen-lg lg:max-w-[1172px] lg:mx-auto mx-5 justify-between border-b border-solid pt-6 pb-[31px] sm:pt-[30px] lg:pb-[33px] lg:pt-[42px] border-[#DCDEE4]"
+    class="flex header-width text-sm flex-col md:flex-row md:items-center justify-between border-b border-solid pt-6 pb-[31px] sm:pt-[30px] lg:pb-[33px] lg:pt-[42px] border-[#DCDEE4]"
   >
     <h2 class="text-4xl text-heading-grey mb-[20px] sm:mb-[26px] md:mb-0">Events</h2>
 
