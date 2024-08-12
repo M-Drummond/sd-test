@@ -4,7 +4,7 @@ import EventsGrid from './components/EventsGrid.vue'
 </script>
 
 <template>
-  <div class="bg-pale-grey min-h-screen">
+  <div class="bg-pale-grey min-h-screen pb-12">
     <EventsHeader />
     <EventsGrid />
   </div>
