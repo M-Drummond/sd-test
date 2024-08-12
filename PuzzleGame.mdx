@@ -1,5 +1,11 @@
 # Puzzle 1
 
+This game is to get a better idea of your understanding of Javascript (JS) & Promises execution flow.
+
+We have given an example of a JS function under Puzzle #1 below and then written out the execution flow (as a function of time) as if we had executed this JS function. The answer to Puzzle #1 can be read as "run() is called, once it finishes executing, it returns a promise, and then runAnotherFuction() is called and finally, once that is done, the function handler(..) is called".
+
+Given the answer to Puzzle #1 please sketch out the flow of execution for the other remaining puzzles.
+
 ```
 run()
 .then(function () {
@@ -9,6 +15,7 @@ run()
 ```
 
 ```
+run()
 |-----------------|
                   runAnotherFunction(undefined)
                   |------------------|
@@ -16,40 +23,48 @@ run()
                                      |------------------|
 --------------------------------------------------------> (time)
 ```
+
+This is the example provided.
 
 # Puzzle 2
 
 ```
 run()
-.then(runAnotherFunction())
+.then(function () {
+  runAnotherFunction();
+})
 .then(handler);
 ```
 
 ```
+run()
 |-----------------|
                   runAnotherFunction(undefined)
                   |------------------|
-                                     handler(resultOfrunAnotherFunction)
-                                     |------------------|
---------------------------------------------------------> (time)
+                  handler(resultOfrunAnotherFunction)
+                  |------------------|
+-------------------------------------> (time)
 ```
 
-Each step is sequential
-
 # Puzzle 3 :
+
+```run()
+.then(runAnotherFunction())
+.then(handler);
+```
 
 ```
 run()
 |------------------|
 runAnotherFunction()
 |------------------|
-handler(resultOfrunAnotherFunction)
-|------------------|
--------------------------------------> (time)
+                    handler(resultOfrunAnotherFunction)
+                    |------------------|
+---------------------------------------> (time)
 
 ```
 
-runAnotherFunction() is is called right away, it goes ahead immediately, because it's not waiting. This means they run in parallel.
+The first .then() runs right away, because there's nothing to wait for. The second .then() relies on it's result.
 
 # Puzzle 4
 
@@ -62,9 +77,9 @@ run()
 ```
 run()
 |------------------|
-runAnotherFunction(resultOfRun)
-|------------------|
-                    handler(resultOfRunAnotherFunction)
+                    runAnotherFunction(resultOfRun)
                     |------------------|
----------------------------------------> (time)
+                                        handler(resultOfRunAnotherFunction)
+                                        |------------------|
+-----------------------------------------------------------> (time)
 ```

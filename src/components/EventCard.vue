@@ -30,6 +30,7 @@ function toggleEventCardMenu() {
   >
     <button @click="toggleEventCardMenu" class="py-4 px-5 absolute z-50 right-0 top-0">
       <IconEllipsisVertical class="text-white right-4 top-4" />
+      <span class="sr-only">Toggle Event Menu</span>
     </button>
 
     <div v-show="eventMenuVisible">
