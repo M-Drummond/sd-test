@@ -1,0 +1,70 @@
+# Puzzle 1
+
+```
+run()
+.then(function () {
+  return runAnotherFunction();
+})
+.then(handler);
+```
+
+```
+|-----------------|
+                  runAnotherFunction(undefined)
+                  |------------------|
+                                     handler(resultOfrunAnotherFunction)
+                                     |------------------|
+--------------------------------------------------------> (time)
+```
+
+# Puzzle 2
+
+```
+run()
+.then(runAnotherFunction())
+.then(handler);
+```
+
+```
+|-----------------|
+                  runAnotherFunction(undefined)
+                  |------------------|
+                                     handler(resultOfrunAnotherFunction)
+                                     |------------------|
+--------------------------------------------------------> (time)
+```
+
+Each step is sequential
+
+# Puzzle 3 :
+
+```
+run()
+|------------------|
+runAnotherFunction()
+|------------------|
+handler(resultOfrunAnotherFunction)
+|------------------|
+-------------------------------------> (time)
+
+```
+
+runAnotherFunction() is is called right away, it goes ahead immediately, because it's not waiting. This means they run in parallel.
+
+# Puzzle 4
+
+```
+run()
+.then(runAnotherFunction)
+.then(handler);
+```
+
+```
+run()
+|------------------|
+runAnotherFunction(resultOfRun)
+|------------------|
+                    handler(resultOfRunAnotherFunction)
+                    |------------------|
+---------------------------------------> (time)
+```
