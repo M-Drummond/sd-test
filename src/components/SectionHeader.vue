@@ -2,13 +2,20 @@
 import ButtonCreate from '../components/buttons/ButtonCreate.vue'
 import IconCreate from '../components/icons/IconCreate.vue'
 import IconSearch from '../components/icons/IconSearch.vue'
+
+defineProps({
+  headerText: {
+    type: String,
+    required: true
+  }
+})
 </script>
 
 <template>
   <header
     class="flex header-width text-sm flex-col md:flex-row md:items-center justify-between border-b border-solid pt-6 pb-[31px] sm:pt-[30px] lg:pb-[33px] lg:pt-[42px] border-[#DCDEE4]"
   >
-    <h2 class="text-4xl text-heading-grey mb-[20px] sm:mb-[26px] md:mb-0">Events</h2>
+    <h2 class="text-4xl text-heading-grey mb-[20px] sm:mb-[26px] md:mb-0" v-text="headerText" />
 
     <form class="flex flex-row items-center justify-between relative">
       <IconSearch class="hidden sm:block absolute left-[14px] text-[#8492A6]" />

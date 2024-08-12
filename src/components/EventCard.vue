@@ -28,8 +28,8 @@ function toggleEventCardMenu() {
     @mouseleave="eventMenuVisible = false"
     class="relative flex flex-col w-full bg-white border border-solid group border-grey-300 rounded-card"
   >
-    <button @click="toggleEventCardMenu">
-      <IconEllipsisVertical class="absolute z-50 text-white right-4 top-4" />
+    <button @click="toggleEventCardMenu" class="py-4 px-5 absolute z-50 right-0 top-0">
+      <IconEllipsisVertical class="text-white right-4 top-4" />
     </button>
 
     <div v-show="eventMenuVisible">
