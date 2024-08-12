@@ -6,12 +6,12 @@ We have given an example of a JS function under Puzzle #1 below and then written
 
 Given the answer to Puzzle #1 please sketch out the flow of execution for the other remaining puzzles.
 
-```
+```js
 run()
-.then(function () {
-  return runAnotherFunction();
-})
-.then(handler);
+  .then(function () {
+    return runAnotherFunction()
+  })
+  .then(handler)
 ```
 
 ```
@@ -28,12 +28,12 @@ This is the example provided.
 
 # Puzzle 2
 
-```
+```js
 run()
-.then(function () {
-  runAnotherFunction();
-})
-.then(handler);
+  .then(function () {
+    runAnotherFunction()
+  })
+  .then(handler)
 ```
 
 ```
@@ -48,9 +48,8 @@ run()
 
 # Puzzle 3 :
 
-```run()
-.then(runAnotherFunction())
-.then(handler);
+```js
+run().then(runAnotherFunction()).then(handler)
 ```
 
 ```
@@ -64,14 +63,10 @@ runAnotherFunction()
 
 ```
 
-The first .then() runs right away, because there's nothing to wait for. The second .then() relies on it's result.
-
 # Puzzle 4
 
-```
-run()
-.then(runAnotherFunction)
-.then(handler);
+```js
+run().then(runAnotherFunction).then(handler)
 ```
 
 ```
