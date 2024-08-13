@@ -1,39 +1,18 @@
-# ar-test
+# Audience Republic Test
 
-This template should help get you started developing with Vue 3 in Vite.
+A demo UI for Audience Republic.
 
-## Recommended IDE Setup
+## Features:
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+- Vu3 everywhere, all of it is in the Composition API.
+- Tailwind + scoped CSS everywhere. There’s only a handful of CSS rules outside of utility classes.
+- I wrote two custom width utilities, site-width and header-width, as they have subtly different widths at mobile size. This is how I’d get exact measurements for the layouts.
+- The tailwind config has entirely custom breakpoints, based on the designs.
+- Icons and buttons are in their own components, so they can be reused.
+- The header element uses a prop, so it can be reused. It’s named SectionHeader, as it’s generic enough to be re-used or -shared in other places.
+- The button takes a <slot> so that it can be extended in other places.
+- There’s a globally registered <ResponsiveImage /> component that could be extended out to display retina or hi-rez images. I admit, I already had something very similar that I adapted for this.
+- The space around the vertical dots on the Event Cards is slightly increased, and I’ve taken care to add padding to this,so it’s got a nice thumb-sized block around it - easier to press.
+- Typescript interfaces used in a few spots to keep things neater.
 
-## Type Support for `.vue` Imports in TS
-
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vitejs.dev/config/).
-
-## Project Setup
-
-```sh
-npm install
-```
-
-### Compile and Hot-Reload for Development
-
-```sh
-npm run dev
-```
-
-### Type-Check, Compile and Minify for Production
-
-```sh
-npm run build
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-npm run lint
-```
+#### NB: Designed font could not be extracted, so I've left the standard Inter font in place. It's similar enough to Graphik for our purposes here.
